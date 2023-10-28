@@ -1,0 +1,101 @@
+/*
+    colors used
+    #D69314	(214,147,20)
+    #ffffff	(255,255,255)
+*/
+
+body {
+    font-size: 1.2rem;
+}
+
+hr {
+    width: 60px;
+}
+
+.photo-info {
+    opacity: 0.8;
+}
+
+.caption {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.yellow-color {
+    color: #D69314 !important;
+}
+
+.green-color {
+    color: #065C73;
+}
+
+.background-black {
+    background-color: #000;
+}
+
+.background-green {
+    background-color: #065C73;
+}
+
+.yellow-background {
+    background-color: #4ea869;
+}
+
+.large-text {
+    font-size: 3rem;
+}
+
+.card {
+    width: 20rem;
+}
+
+.icon-circle {
+    padding-top: 7px;
+    min-width: 90px;
+    min-height: 90px;
+    max-width: 90px;
+    max-height: 90px;
+    background: #065C73;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#main-photo {
+    background: url(../img/zubayer.jpg) no-repeat center center/cover;
+
+    min-height: 720px;
+}
+
+#how-we-teach-header {
+    background-size: 100%;
+    min-height: 200px;
+    background: url("../img/zubayer2.png") no-repeat center center/cover;
+    background-attachment: fixed;
+
+    text-align: center;
+    color: #fff;
+}
+
+#we-teach {
+    text-align: left;
+}
+
+.my_img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50px;
+    border: 5px dashed yellow;
+    box-shadow: 7px 7px 10px rgb(75, 74, 74);
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .caption {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
