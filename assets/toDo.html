@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Daily Task</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+    <!-- ==============Google Fonts=============== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+
+        body {
+            /* height: 100vh; */
+            width: 100%;
+            /* display: flex;
+    justify-content: center;
+    align-items: center; */
+            background-color: #e8dfdf;
+
+            overflow-x: hidden;
+        }
+
+        .heading {
+            height: 60px;
+            width: 100vw;
+            background-color: transparent;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        marquee {
+            line-height: 60px;
+            font-size: 5vw;
+            font-weight: 700;
+
+        }
+
+        .heading .class_link {
+            position: absolute;
+            height: 100%;
+            width: 20%;
+
+            top: 0;
+            right: 0;
+            background-color: green;
+
+            font-size: 2vw;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            line-height: 60px;
+            border-left: 5px solid red;
+
+
+
+
+
+        }
+
+        .heading .class_link a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            display: none;
+
+        }
+
+        .heading .class_link span {
+            /* display: none; */
+
+            animation: zubu .5s ease-in-out infinite;
+        }
+
+        .heading::before {
+            content: "BREAKING NEWS";
+            position: absolute;
+            height: 100%;
+            width: 20%;
+
+            top: 0;
+            left: 0;
+            background-color: green;
+            z-index: 10;
+            font-size: 2.3vw;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            line-height: 60px;
+            border-right: 5px solid red;
+
+        }
+
+
+        .container {
+            height: 500px;
+            width: 350px;
+            background-color: #e8dfdf;
+            margin: 0 auto;
+            box-shadow: 14px 14px 17px #898888d4, -14px -14px 17px #f9f6f687;
+            border-radius: 20px;
+        }
+
+        .container .row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0px;
+            color: #2d1a4f9c;
+
+        }
+
+        .container .row_one {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            padding: 0px 20px;
+            margin-top: 30px;
+        }
+
+        .container .row_one #input_field {
+            padding: 10px 20px;
+            width: 80%;
+            outline: none;
+            border-radius: 10px;
+            caret-color: red;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+
+
+        }
+
+        .container .row_one #input_field::selection {
+            font-weight: bold;
+        }
+
+        .container .row_one .addBtn {
+
+
+            padding: 0px !important;
+
+            border: none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .container .row_one .addBtn i {
+            font-size: 45px;
+        }
+
+        .container .row_two {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0px;
+        }
+
+        .container .row_two #searching_input {
+            width: 88.5%;
+            padding: 8px 20px;
+            outline: none;
+            border-radius: 10px;
+            caret-color: red;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+        }
+
+        .container .my_clock {
+            height: 50px;
+            width: 88.5%;
+            margin: 0 auto;
+            background-color: transparent;
+
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 6px 6px 6px #a5a4a456, inset -6px -6px 6px #fffefee2;
+            border-radius: 10px;
+        }
+
+        .container .my_clock>span {
+            height: 30px;
+            width: 60px;
+            margin: 2px 5px;
+            background-color: transparent;
+            color: rgba(106, 103, 103, 0.358);
+            text-align: center;
+            line-height: 30px;
+            font-size: 30px;
+            font-weight: 700;
+
+            font-family: Orbitron;
+        }
+
+        .container .third_row {
+            margin: 0px auto;
+            height: 230px;
+            width: 90%;
+
+            box-shadow: inset 6px 6px 6px #a5a4a456, inset -6px -6px 6px #fffefee2;
+            border-radius: 10px;
+            position: relative;
+            overflow-y: scroll;
+        }
+
+        .container .third_row ul {
+            /* background-color: red; */
+            position: absolute;
+            /* top: 0;
+    left: 0; */
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .container .third_row ul li {
+            list-style: none;
+            padding: 2px 5px;
+
+
+            box-shadow: 6px 6px 6px #a5a4a456;
+            position: relative;
+            width: 80%;
+            display: block;
+            margin: 10px auto;
+
+            /* display: flex;
+    justify-content: space-between; */
+        }
+
+        .container .third_row ul li.completed {
+            box-shadow: none;
+        }
+
+        .container #clearBtn {
+            display: block;
+            margin: 0 auto;
+            margin-top: 6px;
+            text-align: center;
+            padding: 5px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            background-color: transparent;
+
+            box-shadow: 5px 5px 10px #898888d4, -5px -5px 10px #fff;
+
+            cursor: pointer;
+        }
+
+        .container .third_row ul li:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        .container .third_row ul li.checked {
+            text-decoration: line-through;
+            box-shadow: none;
+            color: gray;
+            color: gray;
+        }
+
+        .container .third_row ul li #edit {
+            margin: 0px 10px;
+        }
+
+
+
+        .container .third_row ul li button {
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+            border: none;
+
+        }
+
+        ::-webkit-scrollbar {
+
+            width: 3px;
+            border-radius: 10px;
+            background-color: #e8dfdf;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #2d1a4f9c;
+            border-radius: 5px;
+        }
+
+
+        @keyframes zubu {
+            from {
+                color: white;
+            }
+
+            to {
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <marquee behavior="scroll" direction="left" scrolldelay="1">Your class will be taken tonight at 11 pm.
+        </marquee>
+        <div class="class_link">
+            <a href="#">ENTER THE CLASS</a>
+            <span>CLASS LINK HERE</span>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <h2>MY DAILY TASK <span><i class="fa-solid fa-clipboard-list"></i></span></h2>
+        </div>
+
+        <div class="my_clock">
+            <span id="hours"></span>
+            <span id="mins"></span>
+            <span id="sec"></span>
+            <span id="ampm"></span>
+        </div>
+
+        <div class="row_one">
+            <input type="text" placeholder="Your task name" id="input_field">
+            <button class="addBtn"><i class="fa-solid fa-square-plus"></i></button>
+        </div>
+
+
+        <div class="row_two">
+            <input type="text" id="searching_input" placeholder="Search your Task">
+        </div>
+
+
+
+
+        <div class="third_row">
+            <ul>
+                <!-- <li class="checked">My country name is Bangladesh.<a href="#">Edit</a> <button class="dlt">Delete</button>
+                </li> -->
+
+
+            </ul>
+        </div>
+
+
+        <button id="clearBtn">Clear All Task</button>
+
+    </div>
+
+    <!-- <script src="./script.js"></script> -->
+
+
+    <script>
+        // Define UI from Dom
+
+
+        let new_task = document.querySelector("#input_field");
+
+        let addingBtn = document.querySelector(".addBtn");
+
+        let filter = document.querySelector("#searching_input");
+
+
+        let taskLists = document.querySelector("ul");
+
+        let clrBtn = document.querySelector("#clearBtn");
+
+
+        // Define eventlistener 
+
+        addingBtn.addEventListener('click', addTask);
+
+        taskLists.addEventListener('click', removeTask);
+
+        clrBtn.addEventListener('click', clearTask);
+
+        filter.addEventListener('keyup', filterTask);
+
+        document.addEventListener('DOMContentLoaded', getTodoFromLs);
+
+
+
+
+
+        // Define Functions
+
+
+        function addTask(e) {
+
+            if (new_task.value === '') {
+                alert("Please add sumthing")
+            } else {
+                let li = document.createElement('li');
+
+
+                li.appendChild(document.createTextNode(new_task.value + " "));
+
+
+
+                let link = document.createElement('a');
+
+                link.setAttribute('href', '#');
+
+
+                link.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+
+
+                li.appendChild(link);
+
+                taskLists.appendChild(li);
+
+
+                //send the data in local Storage 
+
+
+                storeInlocalStorage(new_task.value);
+
+                new_task.value = '';
+
+            }
+
+        }
+
+
+
+
+        //Remove Tasks
+
+
+        function removeTask(e) {
+
+
+            if (e.target.hasAttribute("class")) {
+
+
+                if (confirm("Are you Sure ?")) {
+
+                    let ele = e.target.parentElement.parentElement;
+
+
+                    ele.remove();
+
+                    removeFromLs(ele);
+
+
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+        //Clear task 
+
+
+        function clearTask(e) {
+            if (confirm("Are you sure that youre getting clear your All tasks?")) {
+                //taskLists.innerHTML = "";
+
+                while (taskLists.firstChild) {
+                    taskLists.removeChild(taskLists.firstChild);
+                }
+
+
+
+            }
+
+            localStorage.clear();
+        }
+
+
+        //Filter Tasks
+
+
+        function filterTask(e) {
+
+            let filter_text = e.target.value.toLowerCase();
+            let all_listItem = document.querySelectorAll("li");
+
+            all_listItem.forEach(task => {
+                let item = task.firstChild.textContent;
+
+                if (item.toLowerCase().indexOf(filter_text) != -1) {
+                    task.style.display = 'block';
+                } else {
+                    task.style.display = 'none';
+                }
+            })
+
+
+        }
+
+
+        // Store task in Local Storage 
+
+
+        function storeInlocalStorage(inputValue) {
+
+            let zubusTodo;
+
+            if (localStorage.getItem('zubusTodo') === null) {
+
+                zubusTodo = [];
+
+            } else {
+                zubusTodo = JSON.parse(localStorage.getItem('zubusTodo'));
+            }
+
+            zubusTodo.push(inputValue);
+
+            localStorage.setItem('zubusTodo', JSON.stringify(zubusTodo));
+
+
+        }
+
+
+
+
+        // Show items into Dom From localStorage
+
+
+        function getTodoFromLs() {
+            let zubusTodo;
+
+            if (localStorage.getItem('zubusTodo') === null) {
+
+                zubusTodo = [];
+
+            } else {
+                zubusTodo = JSON.parse(localStorage.getItem('zubusTodo'));
+            }
+
+            zubusTodo.forEach(todoText => {
+                let li = document.createElement('li');
+
+                li.appendChild(document.createTextNode(todoText + " "));
+
+
+
+                let link = document.createElement('a');
+
+                link.setAttribute('href', '#');
+
+
+                link.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+
+
+                li.appendChild(link);
+
+                taskLists.appendChild(li);
+
+            })
+
+        }
+
+
+
+
+        // Remove From Local Storage
+
+
+
+
+        function removeFromLs(everylist) {
+            let zubusTodo;
+
+            if (localStorage.getItem('zubusTodo') === null) {
+                zubusTodo = [];
+            } else {
+                zubusTodo = JSON.parse(localStorage.getItem('zubusTodo'));
+            }
+
+            let li = everylist;
+            let listItemText = li.firstChild.textContent.trim(); // Trim text content
+
+            zubusTodo.forEach((task, index) => {
+                if (listItemText === task) { // Compare trimmed text
+                    zubusTodo.splice(index, 1);
+                }
+            });
+
+            localStorage.setItem('zubusTodo', JSON.stringify(zubusTodo));
+        }
+
+
+
+
+        //My Clock system 
+
+        setInterval(() => {
+            let hours = document.querySelector("#hours");
+
+            let mins = document.querySelector("#mins");
+
+            let sec = document.querySelector("#sec");
+
+            let ampm = document.querySelector("#ampm");
+
+
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+            let am = h >= 12 ? "PM" : "AM";
+
+
+            console.log(h, m, s, am);
+
+            if (h > 12) {
+                h = h - 12;
+            }
+
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+
+
+            hours.innerHTML = `${h}:`;
+
+            mins.innerHTML = `${m}:`;
+            sec.innerHTML = `${s}:`;
+            ampm.innerHTML = `${am}`;
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
